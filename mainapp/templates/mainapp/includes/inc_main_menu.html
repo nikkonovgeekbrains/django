@@ -1,0 +1,3 @@
+<li><a href="{% url 'main' %}"  {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} >домой</a></li>
+<li><a href="{% url 'products' %}" {% if 'products' in request.resolver_match.url_name %} class="active" {% endif %}>продукты</a></li>
+<li><a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %} class="active" {% endif %}>контакты</a></li>
