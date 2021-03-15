@@ -1,0 +1,98 @@
+C:\GeekBrains_proj\django\geekshop>python manage.py shell
+Python 3.7.8 (tags/v3.7.8:4b47a5b6ba, Jun 28 2020, 07:55:33) [MSC v.1916 32 bit (Intel)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.21.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from mainapp.models import Product, ProductCategory
+
+In [2]: new_cat = ProductCategory
+
+In [3]: new_cat = ProductCategory(name='диваны)
+  File "<ipython-input-3-cc43364b4524>", line 1
+    new_cat = ProductCategory(name='диваны)
+                                           ^
+SyntaxError: EOL while scanning string literal
+
+
+In [4]: new_cat = ProductCategory(name='диваны')
+
+In [5]: new_cat
+Out[5]: <ProductCategory: диваны>
+
+In [6]: new_cat.save()
+
+In [7]: new_cat1 = ProductCategory(name='стулья')
+
+In [8]: new_cat1
+Out[8]: <ProductCategory: стулья>
+
+In [9]: new_cat.__dict__
+Out[9]:
+{'_state': <django.db.models.base.ModelState at 0x5408e10>,
+ 'id': 1,
+ 'name': 'диваны',
+ 'discription': ''}
+
+In [10]: new_cat1.__dict__
+Out[10]:
+{'_state': <django.db.models.base.ModelState at 0x4f97110>,
+ 'id': None,
+ 'name': 'стулья',
+ 'discription': ''}
+
+In [11]: new_cat1.save()
+
+In [12]: new_cat1.__dict__
+Out[12]:
+{'_state': <django.db.models.base.ModelState at 0x4f97110>,
+ 'id': 2,
+ 'name': 'стулья',
+ 'discription': ''}
+
+In [13]: cats = ProductCategory.objects.all()
+
+In [14]: cats
+Out[14]: <QuerySet [<ProductCategory: диваны>, <ProductCategory: стулья>]>
+
+In [15]: cats[0]
+Out[15]: <ProductCategory: диваны>
+
+In [16]: cats[1]
+Out[16]: <ProductCategory: стулья>
+
+In [17]: cat = ProductCategory.objects.get(pk=1)
+
+In [18]: cat
+Out[18]: <ProductCategory: диваны>
+
+In [19]: cat = ProductCategory.objects.get(pk=2)
+
+In [20]: cat
+Out[20]: <ProductCategory: стулья>
+
+In [21]: cat.delete()
+Out[21]: (1, {'mainapp.ProductCategory': 1})
+
+In [22]: cats = ProductCategory.objects.all()
+
+In [23]: cats
+Out[23]: <QuerySet [<ProductCategory: диваны>]>
+
+In [24]: prod = Product.objects.create(category=cats[0], name='модный стул', price=1500.50, quantity=10)
+
+In [25]: prod
+Out[25]: <Product: f{self.name} ({self.category})>
+
+In [26]: prod.__dict__
+Out[26]:
+{'_state': <django.db.models.base.ModelState at 0x4bc3650>,
+ 'id': 1,
+ 'category_id': 1,
+ 'name': 'модный стул',
+ 'image': <ImageFieldFile: None>,
+ 'short_desc': '',
+ 'discription': '',
+ 'price': 1500.5,
+ 'quantity': 10}
+
+In [27]:            
