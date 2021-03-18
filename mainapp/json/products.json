@@ -1,0 +1,92 @@
+[
+  {
+    "category": "дом",
+    "name": "комфорт 1",
+    "image": "products_images/product-1.jpg",
+    "short_desc": "комфортный стул",
+    "discription": "подойдет для просмотра фильмов",
+    "price": "2989.5",
+    "quantity": "17"
+  },
+  {
+    "category": "дом",
+    "name": "комфорт 2",
+    "image": "products_images/product-2.jpg",
+    "short_desc": "очень комфортный стул",
+    "discription": "подойдет для общения с друзьями",
+    "price": "3587.2",
+    "quantity": "21"
+  },
+  {
+    "category": "дом",
+    "name": "люкс",
+    "image": "products_images/product-3.jpg",
+    "short_desc": "использованы премиальные материалы",
+    "discription": "для тех, кто стремится к лучшему",
+    "price": "8157.99",
+    "quantity": "7"
+  },
+  {
+    "category": "офис",
+    "name": "стандарт",
+    "image": "products_images/product-4.jpg",
+    "short_desc": "универсальное решение",
+    "discription": "подойдет для любого офиса",
+    "price": "1895.25",
+    "quantity": "22"
+  },
+  {
+    "category": "офис",
+    "name": "премиум",
+    "image": "products_images/product-5.jpg",
+    "short_desc": "премиумный офисный стул",
+    "discription": "хорошо подойдет для офиса",
+    "price": "17500",
+    "quantity": "12"
+  },
+  {
+    "category": "модерн",
+    "name": "новинка",
+    "image": "products_images/product-11.jpg",
+    "short_desc": "новинка в стиле модерн",
+    "discription": "подойдет для гостинной",
+    "price": "7800",
+    "quantity": "23"
+  },
+  {
+    "category": "модерн",
+    "name": "прогресс",
+    "image": "products_images/product-21.jpg",
+    "short_desc": "прогрессивный стул в стиле модерн",
+    "discription": "подойдет для гостевой комнаты",
+    "price": "3800",
+    "quantity": "7"
+  },
+  {
+    "category": "классика",
+    "name": "рим",
+    "image": "products_images/product-31.jpg",
+    "short_desc": "классический стол из коллекции рим",
+    "discription": "отлично подходит для кухни",
+    "price": "13400",
+    "quantity": "32"
+  },
+  {
+    "category": "классика",
+    "name": "тоскана",
+    "image": "products_images/product-41.jpg",
+    "short_desc": "стул в стиле тоскана",
+    "discription": "хорошо подойдет для кухни",
+    "price": "4800",
+    "quantity": "14"
+  },
+  {
+    "category": "классика",
+    "name": "венеция",
+    "image": "products_images/product-51.jpg",
+    "short_desc": "классический стул из коллекции венеция",
+    "discription": "отлично подойдет для гостинной",
+    "price": "6300",
+    "quantity": "21"
+  }
+]
