@@ -24,14 +24,14 @@ html, body {
 
 .slider {
 	height: 800px;
-	background-image: url(img/slider.jpg); 
+	background-image: url(/static/img/slider.jpg); 
 	padding-left: 98px;
 	padding-right: 211px;
 	position: relative;
 }
 
 .logo {
-	background-image: url(img/logo.png);
+	background-image: url(/static/img/logo.png);
 	margin-top: 63px;
 	width: 185px;
 	height: 22px;
@@ -75,7 +75,7 @@ html, body {
 	display: block;
 	width: 23px;
 	height: 23px;	
-	background-image: url(img/search.png);
+	background-image: url(/static/img/search.png);
 	position: absolute;
 	top: 63px;
 	left: 1176px;
@@ -84,7 +84,7 @@ html, body {
 	display: block;
 	width: 23px;
 	height: 23px;	
-	background-image: url(img/basket.png);
+	background-image: url(/static/img/basket.png);
 	position: absolute;
 	top: 63px;
 	left: 1210px;
@@ -299,13 +299,13 @@ html, body {
 }
 
 .promo-content-1 {
-	background-image: url(img/promo-img1.jpg);
+	background-image: url(/static/img/promo-img1.jpg);
 	width: 683px;
 	height: 683px;
 	float: left;
 }
 .promo-content-2 {
-	background-image: url(img/promo-img2.jpg);
+	background-image: url(/static/img/promo-img2.jpg);
 	width: 683px;
 	height: 683px;
 	float: right;
@@ -414,7 +414,7 @@ html, body {
 	margin-top: 105px;
 	height: 800px;
 	padding-left: 98px;
-	background-image: url(img/slider-hotdeal.jpg);
+	background-image: url(/static/img/slider-hotdeal.jpg);
 	position: relative;
 }
 .text-hotDeal {
@@ -443,7 +443,7 @@ html, body {
 	height: 570px;
 	width: 570px;	
 	float: left;
-	background-image: url(img/product-1-lg.jpg);
+	background-image: url(/static/img/product-1-lg.jpg);
 }
 .exclusive-small {
 	width: 570px;
@@ -503,7 +503,7 @@ html, body {
 .mobile {
 	height: 516px;
 	margin-top: 90px;
-	background-image: url(img/mobile-back.jpg);
+	background-image: url(/static/img/mobile-back.jpg);
 	padding-left: 99px;
 	position: relative;
 }
@@ -659,14 +659,14 @@ td:first-child {
 	margin-top: 30px;
 }
 .social1{
-	background: url(img/social-links.png);
+	background: url(/static/img/social-links.png);
 	height: 28px;
 	width: 28px;
 	float: left;
 
 }
 .social2{
-	background: url(img/social-links.png);
+	background: url(/static/img/social-links.png);
 	background-position: -34px 0px;
 	height: 28px;
 	width: 28px;
@@ -674,7 +674,7 @@ td:first-child {
 	margin-left: 3px;
 }
 .social3{
-	background: url(img/social-links.png);
+	background: url(/static/img/social-links.png);
 	background-position: -67px 0px;
 	height: 28px;
 	width: 28px;
@@ -682,7 +682,7 @@ td:first-child {
 	margin-left: 3px;
 }
 .social4{
-	background: url(img/social-links.png);
+	background: url(/static/img/social-links.png);
 	background-position: -101px 0px;
 	height: 28px;
 	width: 28px;

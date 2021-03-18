@@ -1,0 +1,20 @@
+[
+        {
+            "city": "Москва",
+            "phone": "+7-888-888-88-88",
+            "email": "info@geekshop.ru",
+            "address": "МКАД"
+        },
+        {
+            "city": "Екатеринбург",
+            "phone": "+7-777-777-77-77",
+            "email": "info_nikkonov@geekshop.ru",
+            "address": "Центр"
+        },
+        {
+            "city": "Владивосток",
+            "phone": "+7-666-666-66-66",
+            "email": "info_konovaltsev@geekshop.ru",
+            "address": "В горах"
+        }
+]
