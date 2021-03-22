@@ -1,3 +1,27 @@
-<li><a href="{% url 'main' %}"  {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} >домой</a></li>
-<li><a href="{% url 'products:products' %}" {% if 'products' in request.resolver_match.url_name %} class="active" {% endif %}>продукты</a></li>
-<li><a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %} class="active" {% endif %}>контакты</a></li>
+<ul class="menu"
+    <li><a href="{% url 'main' %}"  {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} >домой</a></li>
+    <li><a href="{% url 'products:products' %}" {% if 'products' in request.resolver_match.url_name %} class="active" {% endif %}>продукты</a></li>
+    <li><a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %} class="active" {% endif %}>контакты</a></li>
+
+
+    {% if user.is_authenticated %}
+    <li>
+        <a href="{% url 'auth:edit' %}">
+        {{ user.first_name|default:'Пользователь' }}
+        </a>
+    </li>
+    {% endif %}
+
+
+    <li>
+        {% if user.is_authenticated %}
+            <a href="{% url 'auth:logout' %}">
+                выход
+            </a>
+        {% else %}
+            <a href="{% url 'auth:login' %}">
+                вход
+            </a>
+        {% endif %}
+    </li>
+</ul>
