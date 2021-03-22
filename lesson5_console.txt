@@ -1,0 +1,91 @@
+In [1]: from mainapp.models import *
+
+In [2]: from mainapp.models import Product, ProductCategory
+
+In [3]: prods = Product.objects.filter(category__pk=2)
+
+In [4]: prods
+Out[4]: <QuerySet [<Product: стандарт (офис)>, <Product: премиум (офис)>]>
+
+In [5]: prods.count()
+Out[5]: 2
+
+In [6]: prods.exists()
+Out[6]: True
+
+In [7]: prods = Product.objects.filter(category__name='дом)
+  File "<ipython-input-7-f0f7047c94bc>", line 1
+    prods = Product.objects.filter(category__name='дом)
+                                                       ^
+SyntaxError: EOL while scanning string literal
+
+
+In [8]: prods = Product.objects.filter(category__name='дом')
+
+In [9]: prods
+Out[9]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: комфорт 2 (дом)>, <Product: люкс (дом)>]>
+
+In [10]: prods = Product.objects.filter(category__pk__in [1,2])
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-10-ef3571697f39> in <module>
+----> 1 prods = Product.objects.filter(category__pk__in [1,2])
+
+NameError: name 'category__pk__in' is not defined
+
+In [11]: prods = Product.objects.filter(category__pk__in= [1,2])
+
+In [12]: prods
+Out[12]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: комфорт 2 (дом)>, <Product: люкс (дом)>, <Product: стандарт (офис)>, <Product: премиум (офис)>]>
+
+In [13]: prods = Product.objects.filter(price__gt=3500)
+
+In [14]: prods
+Out[14]: <QuerySet [<Product: комфорт 2 (дом)>, <Product: люкс (дом)>, <Product: премиум (офис)>, <Product: новинка (модерн)>, <Product: прогресс (модерн)>, <Product: рим (классика)>, <Product: тоскана (классика)>, <Product: венеция (классика)>]>
+
+In [15]: prods = Product.objects.filter(price__lt=3500)
+
+In [16]: prods
+Out[16]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: стандарт (офис)>]>
+
+In [17]: prods = Product.objects.filter(name__startswith='д')
+
+In [18]: prods
+Out[18]: <QuerySet []>
+
+In [19]: prods = Product.objects.filter(name__startswith='к')
+
+In [20]: prods
+Out[20]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: комфорт 2 (дом)>]>
+
+In [21]: prods = Product.objects.filter(name__startswith='р')
+
+In [22]: prods = Product.objects.filter(name__endswith='р')
+
+In [23]: prods
+Out[23]: <QuerySet []>
+
+In [24]: prods = Product.objects.filter(name__endswith='м')
+
+In [25]: prods
+Out[25]: <QuerySet [<Product: премиум (офис)>, <Product: рим (классика)>]>
+
+In [26]: prods = Product.objects.filter(price__gt=3500).order_by('name')
+
+In [27]: prods
+Out[27]: <QuerySet [<Product: венеция (классика)>, <Product: комфорт 2 (дом)>, <Product: люкс (дом)>, <Product: новинка (модерн)>, <Product: премиум (офис)>, <Product: прогресс (модерн)>, <Product: рим (классика)>, <Product: тоскана (классика)>]>
+
+In [28]: prods = Product.objects.filter(price__gt=3500).order_by('-name')
+
+In [29]: prods
+Out[29]: <QuerySet [<Product: тоскана (классика)>, <Product: рим (классика)>, <Product: прогресс (модерн)>, <Product: премиум (офис)>, <Product: новинка (модерн)>, <Product: люкс (дом)>, <Product: комфорт 2 (дом)>, <Product: венеция (классика)>]>
+
+In [30]: prods = Product.objects.exclude(price__gt=3500)
+
+In [31]: prods
+Out[31]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: стандарт (офис)>]>
+
+In [32]: prods = Product.objects.exclude(category__pk=2)
+
+In [33]: prods
+Out[33]: <QuerySet [<Product: комфорт 1 (дом)>, <Product: комфорт 2 (дом)>, <Product: люкс (дом)>, <Product: новинка (модерн)>, <Product: прогресс (модерн)>, <Product: рим (классика)>, <Product: тоскана (классика)>, <Product: венеция (классика)>]>
