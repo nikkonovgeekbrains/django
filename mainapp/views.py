@@ -6,6 +6,9 @@ import json
 
 from mainapp.models import ProductCategory, Product
 
+from django.shortcuts import get_object_or_404
+from basketapp.models import Basket
+
 # Create your views here.
 def main(request):
     title = 'Главная'
@@ -36,22 +39,39 @@ def main(request):
 
 
 def products(request, pk=None):
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+    #basket = 0
+    #if request.user.is_authenticated:
+        #basket = sum(list(Basket.objects.filter(user=request.user).values_list('quantity', flat=True)))
+    print(pk)
     tittel = 'Продукты'
-    # links_menu = [
-    #     {'href': 'products_all', 'name': 'все'},
-    #     {'href': 'products_home', 'name': 'дом'},
-    #     {'href': 'products_office', 'name': 'офис'},
-    #     {'href': 'products_modern', 'name': 'модерн'},
-    #     {'href': 'products_classic', 'name': 'классика'}
-    # ]
-
     links_menu = ProductCategory.objects.all()
+    if pk is not None:
+        if pk == 0:
+            product_list = Product.objects.all().order_by('price')
+            category_item = {'name': 'все', 'pk': 0}
+        else:
+            category_item = get_object_or_404(ProductCategory, pk=pk)
+            product_list = Product.objects.filter(category=category_item)
+        content = {
+            'title': tittel,
+            'links_menu': links_menu,
+            'category': category_item,
+            'products': product_list,
+            'basket': basket
+        }
+        return render(request, 'mainapp/products_list.html', content)
+
     same_products = Product.objects.all()[:4]
     content = {
         'title': tittel,
         'links_menu': links_menu,
         'same_products': same_products,
+        'basket': basket
     }
+    print(basket)
     return render(request, 'mainapp/products.html', content)
 
 

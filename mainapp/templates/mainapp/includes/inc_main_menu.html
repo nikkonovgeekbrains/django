@@ -1,8 +1,20 @@
-<ul class="menu"
-    <li><a href="{% url 'main' %}"  {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} >домой</a></li>
-    <li><a href="{% url 'products:products' %}" {% if 'products' in request.resolver_match.url_name %} class="active" {% endif %}>продукты</a></li>
-    <li><a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %} class="active" {% endif %}>контакты</a></li>
-
+<a href="{% url 'main' %}" class="logo"></a>
+<ul class="menu">
+    <li>
+        <a href="{% url 'main' %}"  {% if request.resolver_match.url_name == 'main' %} class="active" {% endif %} >
+        домой
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'products:products' %}" {% if request.resolver_match.namespace == 'products' %} class="active" {% endif %}>
+        продукты
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'contact' %}" {% if request.resolver_match.url_name == 'contact' %} class="active" {% endif %}>
+        контакты
+        </a>
+    </li>
 
     {% if user.is_authenticated %}
     <li>
@@ -25,3 +37,13 @@
         {% endif %}
     </li>
 </ul>
+
+<a href="#" class="search"></a>
+<a href="{% url 'basket:view' %}" class="basket">
+    <span>
+        {% if basket%}
+        {{ basket.0.sum_coast }}
+        за {{ basket.0.sum_quant }} шт
+        {% endif %}
+    </span>
+</a>
