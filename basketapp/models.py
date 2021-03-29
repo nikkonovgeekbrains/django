@@ -14,17 +14,33 @@ class Basket(models.Model):
     add_datetime = models.DateTimeField(verbose_name='время', auto_now_add=True)
 
     @property
-    def sum_quant(self):
-        basket_list = Basket.objects.filter(user=self.user)
-        sum_q = 0
-        for el in basket_list:
-            sum_q += el.quantity
-        return sum_q
+    def product_cost(self):
+        return self.product.price * self.quantity
 
     @property
-    def sum_coast(self):
-        basket_list = Basket.objects.filter(user=self.user)
-        sum_c = 0
-        for el in basket_list:
-            sum_c += el.quantity * el.product.price
-        return sum_c
+    def total_quantity(self):
+        _items = Basket.objects.filter(user=self.user)
+        _totalquantity = sum(list(map(lambda x: x.quantity, _items)))
+        return _totalquantity
+
+    @property
+    def total_cost(self):
+        _items = Basket.objects.filter(user=self.user)
+        _totalcost = sum(list(map(lambda x: x.product_cost, _items)))
+        return _totalcost
+
+    # @property
+    # def sum_quant(self):
+    #     basket_list = Basket.objects.filter(user=self.user)
+    #     sum_q = 0
+    #     for el in basket_list:
+    #         sum_q += el.quantity
+    #     return sum_q
+    #
+    # @property
+    # def sum_coast(self):
+    #     basket_list = Basket.objects.filter(user=self.user)
+    #     sum_c = 0
+    #     for el in basket_list:
+    #         sum_c += el.quantity * el.product.price
+    #     return sum_c

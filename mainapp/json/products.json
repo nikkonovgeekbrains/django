@@ -4,7 +4,7 @@
     "name": "комфорт 1",
     "image": "products_images/product-1.jpg",
     "short_desc": "комфортный стул",
-    "discription": "подойдет для просмотра фильмов",
+    "description": "подойдет для просмотра фильмов",
     "price": "2989.5",
     "quantity": "17"
   },
@@ -13,7 +13,7 @@
     "name": "комфорт 2",
     "image": "products_images/product-2.jpg",
     "short_desc": "очень комфортный стул",
-    "discription": "подойдет для общения с друзьями",
+    "description": "подойдет для общения с друзьями",
     "price": "3687.2",
     "quantity": "21"
   },
@@ -22,7 +22,7 @@
     "name": "люкс",
     "image": "products_images/product-3.jpg",
     "short_desc": "использованы премиальные материалы",
-    "discription": "для тех, кто стремится к лучшему",
+    "description": "для тех, кто стремится к лучшему",
     "price": "8157.99",
     "quantity": "7"
   },
@@ -31,7 +31,7 @@
     "name": "стандарт",
     "image": "products_images/product-4.jpg",
     "short_desc": "универсальное решение",
-    "discription": "подойдет для любого офиса",
+    "description": "подойдет для любого офиса",
     "price": "1895.25",
     "quantity": "27"
   },
@@ -40,7 +40,7 @@
     "name": "премиум",
     "image": "products_images/product-5.jpg",
     "short_desc": "улучшенный дизайн",
-    "discription": "идеально впишется в строгий интерьер офиса",
+    "description": "идеально впишется в строгий интерьер офиса",
     "price": "3587.41",
     "quantity": "9"
   },
@@ -49,7 +49,7 @@
     "name": "новинка",
     "image": "products_images/product-6.jpg",
     "short_desc": "инновационный дизайн",
-    "discription": "нестандартное решение для современного интерьера",
+    "description": "нестандартное решение для современного интерьера",
     "price": "5361.47",
     "quantity": "18"
   },
@@ -58,7 +58,7 @@
     "name": "прогресс",
     "image": "products_images/product-7.jpg",
     "short_desc": "прогрессивный дизайн",
-    "discription": "функциональное и комфортное решение",
+    "description": "функциональное и комфортное решение",
     "price": "6789.33",
     "quantity": "12"
   },
@@ -67,7 +67,7 @@
     "name": "венеция",
     "image": "products_images/product-8.jpg",
     "short_desc": "классические формы",
-    "discription": "окунитесь в европейский комфорт",
+    "description": "окунитесь в европейский комфорт",
     "price": "4147.51",
     "quantity": "25"
   },
@@ -76,7 +76,7 @@
     "name": "тоскана",
     "image": "products_images/product-9.jpg",
     "short_desc": "эргономичная спинка",
-    "discription": "почувствуйте комфорт и насладитесь цветовой гаммой",
+    "description": "почувствуйте комфорт и насладитесь цветовой гаммой",
     "price": "7147.35",
     "quantity": "18"
   },
@@ -85,7 +85,7 @@
     "name": "рим",
     "image": "products_images/product-10.jpg",
     "short_desc": "удачные пропорции",
-    "discription": "компактность и функциональность",
+    "description": "компактность и функциональность",
     "price": "8357.77",
     "quantity": "8"
   }

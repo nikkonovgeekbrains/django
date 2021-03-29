@@ -42,8 +42,8 @@
 <a href="{% url 'basket:view' %}" class="basket">
     <span>
         {% if basket%}
-        {{ basket.0.sum_coast }}
-        за {{ basket.0.sum_quant }} шт
+        {{ basket.0.total_cost|floatformat:0 }} руб
+        ({{ basket.0.total_quantity }})
         {% endif %}
     </span>
 </a>
