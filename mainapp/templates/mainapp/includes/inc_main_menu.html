@@ -23,8 +23,11 @@
         </a>
     </li>
     {% endif %}
-
-
+    {% if user.is_superuser %}
+        <li>
+          <a href="{% url 'admin:user_read' %}">админка</a>
+        </li>
+    {% endif %}
     <li>
         {% if user.is_authenticated %}
             <a href="{% url 'auth:logout' %}">
