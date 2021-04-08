@@ -1,0 +1,24 @@
+<ul class="menu">
+  <li>
+    <a href="{% url 'main' %}">
+      на сайт
+    </a>
+  </li>
+  <li>
+    <a
+       class="{% if 'user' in request.resolver_match.url_name %}active{% endif %}" href="{% url 'admin:user_read' %}">
+      пользователи
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'admin:category_read' %}"
+       class="{% if request.resolver_match.url_name == 'categories' or category.name %}
+                active
+              {% endif %}">
+      категории
+      {% if category %}
+        :<span>{{ category.name }}</span>
+      {% endif %}
+    </a>
+  </li>
+</ul>
