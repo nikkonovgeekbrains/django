@@ -4,19 +4,18 @@
 
 {% block content %}
 <div class="user_delete">
-    Уверены, что хотите удалить продукт {{ product_to_delete.name }}?
-    <form action="{% url 'admin:product_delete' product_to_delete.pk %}"
+    Уверены, что хотите удалить продукт {{ object.name }}?
+    <form action="{% url 'admin:product_delete' object.pk %}"
           method="post">
         {% csrf_token %}
-        {{object.is_active}}
-        {% if product_to_delete.is_active %}
+        {% if object.is_active %}
             <input class="btn btn-danger" type="submit" value="удалить">
         {% else %}
             <input class="btn btn-primary" type="submit" value="восстановить">
         {% endif %}
     </form>
     <button class="btn btn-success">
-        <a href="{% url 'admin:products' product_to_delete.category.pk %}">
+        <a href="{% url 'admin:products' object.category.pk %}">
             Отмена
         </a>
     </button>
