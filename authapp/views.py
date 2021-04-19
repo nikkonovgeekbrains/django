@@ -9,6 +9,10 @@ from django.urls import reverse
 from authapp.forms import ShopUserRegisterForm
 from authapp.forms import ShopUserEditForm
 
+from django.core.mail import send_mail
+from django.conf import settings
+from authapp.models import ShopUser
+
 
 def login(request):
     title = 'вход'
@@ -46,7 +50,11 @@ def register(request):
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
 
         if register_form.is_valid():
-            register_form.save()
+            user = register_form.save()
+            if send_verify_email(user):
+                print('success')
+            else:
+                print('failed')
             return HttpResponseRedirect(reverse('auth:login'))
     else:
         register_form = ShopUserRegisterForm()
@@ -70,3 +78,23 @@ def edit(request):
     content = {'title': title, 'edit_form': edit_form}
 
     return render(request, 'authapp/edit.html', content)
+
+
+def send_verify_email(user):
+    verify_link = reverse('authapp:verify', args=[user.email, user.activation_key])
+
+    subject = f'Подтверждение учетной записи {user.email}'
+
+    message = f'Ссылка для активации: {settings.DOMAIN_NAME}{verify_link}'
+
+    return send_mail(subject, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
+
+def verify(request, email, activation_key):
+    user = ShopUser.objects.get(email=email)
+    if user.activation_key == activation_key and not user.is_activation_key_expired():
+        user.is_active = True
+        user.activation_key = ''
+        user.save()
+        auth.login(request, user)
+    return render(request, 'authapp/verification.html')
+
