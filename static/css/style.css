@@ -4,6 +4,62 @@
 	padding: 0;
 }
 
+.order_container {
+    margin: 25px auto;
+    width: 900px;
+}
+
+.order_container button a {
+    text-decoration: none;
+    color: #555;
+}
+
+.order_container img {
+    display: block;
+    float: left;
+    width: 150px;
+    border-radius: 25px;
+}
+
+
+button.last {
+    margin-bottom: 10px;
+}
+
+.not_active {
+    opacity: 0.5;
+}
+
+.table.orders_list {
+    min-width: 600px;
+}
+
+.td1.orders_list {
+    width: 40px;
+}
+
+.table.order.formset {
+    min-width: 400px;
+}
+
+.td1.order.formset_td {
+    /*width: 70%;*/
+}
+
+.td2.order.formset_td {
+    /*width: 50px;*/
+}
+
+.td3.order.formset_td {
+    /*width: 50px;*/
+    text-align: center;
+}
+
+.td4.order.formset_td {
+    /*width: 50px;*/
+    text-align: center;
+}
+
 body {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -381,7 +437,7 @@ html, body {
 
 .basket_container {
     margin: 25px auto;
-    width: 700px;
+    width: 900px;
 }
 
 .basket_list input[type="number"] {
@@ -415,9 +471,17 @@ html, body {
     float: left;
 }
 
+.basket_list span.product_quantitiy {
+    margin-left: 1em;
+    width: 5em;
+    position: relative;
+    display: block;
+    float: left;
+}
+
 .basket_list span.product_cost {
     margin-left: 1em;
-    width: 7em;
+    width: 10em;
     position: relative;
     display: block;
     float: left;
@@ -434,8 +498,17 @@ html, body {
     margin: 25px auto;
 }
 
-.basket_container button {
-    margin-left: 25px;
+.basket_list .basket_record button {
+    margin-top: 50px;
+    margin-left: 390px;
+    width: 150px;
+    position: absolute;
+    display: block;
+    float: left;
+}
+
+.basket_list button {
+    margin-left: 45px;
     width: 150px;
     display: block;
     float: left;
@@ -568,7 +641,7 @@ html, body {
     width: 28em;
     min-width: 500px;
     margin: 100px auto;
-
+       
     position: relative;
     display: block;
 }
@@ -626,7 +699,7 @@ html, body {
 
 .slider {
 	height: 800px;
-	background-image: url(/static/img/slider.jpg);
+	background-image: url(/static/img/slider.jpg); 
 	/*padding-left: 98px;*/
 	padding-left: 78px;
 	padding-right: 211px;
@@ -677,7 +750,7 @@ html, body {
 .search {
 	display: block;
 	width: 23px;
-	height: 23px;
+	height: 23px;	
 	background-image: url(/static/img/search.png);
 	position: absolute;
 	top: 63px;
@@ -687,7 +760,7 @@ html, body {
 .basket {
 	display: block;
 	width: 23px;
-	height: 23px;
+	height: 23px;	
 	background-image: url(/static/img/basket.png);
 	position: absolute;
 	top: 63px;
@@ -735,7 +808,7 @@ html, body {
 	font-size: 17px;
 	font-weight: 700;
 	line-height: 45px;
-	margin-top: 32px;
+	margin-top: 32px; 
 	letter-spacing: 3px;
 }
 .button-order:hover {
@@ -977,7 +1050,7 @@ html, body {
 
 .trending-products {
 	margin-top: 53px;
-
+	
 }
 .trending-products .block a img {
 	float: left;
@@ -1054,7 +1127,7 @@ html, body {
 }
 .exclusive-big {
 	height: 570px;
-	width: 570px;
+	width: 570px;	
 	float: left;
 	background-image: url(/static/img/product-1-lg.jpg);
 }
@@ -1186,7 +1259,7 @@ html, body {
 	margin-right: 0;
 }
 .text-footer h3 {
-	text-transform: uppercase;
+	text-transform: uppercase; 
 	color:  #6c6c6c;
 	font-size: 18px;
 	font-weight: 700;
@@ -1375,8 +1448,8 @@ td:first-child {
 .tab-control li {
 	float: left;
 	border-bottom: 1px solid #6c6c6c;
-	padding-bottom: 19px;
-}
+	padding-bottom: 19px;	
+} 
 .tab-control a {
 	color: #6c6c6c;
 	font-size: 18px;
@@ -1471,7 +1544,7 @@ td:first-child {
 	padding-left: 360px;
 }
 .links-menu {
-	margin:	27px auto 0px;
+	margin:	27px auto 0px;	
 	position: absolute;
 }
 .links-menu li {
@@ -1539,7 +1612,7 @@ td:first-child {
 	background-color: #fff;
     opacity: 0.7;
     position: absolute;
-    top: 0;
+    top: 0;    
 }
 .slider-control a:hover .text {
 	display: block;
