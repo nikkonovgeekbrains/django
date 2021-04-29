@@ -34,7 +34,7 @@ def basket_add(request, pk):
         basket_item = Basket(user=request.user, product=product_item)
 
     basket_item.quantity += 1
-    basket_item.save()
+    basket_item.save(update_fields=['quantity', 'product'])
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
